@@ -70,6 +70,8 @@ void draw(){
    for(int i =0; i<parts.length; i++){
    if(i==1){
     parts[i].rad=30;
+    }else{
+      parts[i].rad=5;
     }
      parts[i].show();
      parts[i].move();
