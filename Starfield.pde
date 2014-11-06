@@ -21,7 +21,7 @@ class Particle implements Obj{
     float x,y;
     double xSpeed=(Math.random()*2-1);
     double ySpeed=0;
-    int col;
+    int col,rad;
     Particle(){
         this.x=width/2+(int)(Math.random()*400-200);
         this.y=(float)((height/2+(Math.random()*2-1)*(float)(Math.sqrt(40000-(Math.abs(width/2-x))*(Math.abs(width/2-x))))));
@@ -30,7 +30,7 @@ class Particle implements Obj{
     void show(){
       noStroke();
       fill(col);
-      ellipse(x,y,5,5);
+      ellipse(x,y,rad,rad);
     }
     void move(){
         x+=xSpeed;
@@ -68,6 +68,9 @@ class Ball implements Obj{
 void draw(){
    fill(0,0,0,40);rect(0,0,width,height);
    for(int i =0; i<parts.length; i++){
+   if(i==1){
+    parts[i].rad=30;
+    }
      parts[i].show();
      parts[i].move();
      //cannot acces an "active" variable not defined in the interface
