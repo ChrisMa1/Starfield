@@ -9,6 +9,7 @@ void setup(){
     }
   }
 }
+
 interface Obj{
   void show();
   void move(); 
@@ -17,6 +18,7 @@ final int num=500;
 Obj [] parts= new Obj [num];
 int count;
 double speed=(Math.sin(millis()));
+
 class Particle implements Obj{
     float x,y;
     double xSpeed=(Math.random()*2-1);
@@ -66,11 +68,12 @@ class Ball implements Obj{
     }
 }
 void draw(){
-   fill(0,0,0,40);rect(0,0,width,height);
+   fill(0,0,0,40);
+   rect(0,0,width,height);
    for(int i =0; i<parts.length; i++){
-   /*if(i==1){
-    parts[i].rad=50;
-    }else{*/
+   if(i==1){
+    parts[i].rad=5;
+    }else{
       parts[i].rad=5;
     }
      parts[i].show();
