@@ -68,9 +68,9 @@ class Ball implements Obj{
 void draw(){
    fill(0,0,0,40);rect(0,0,width,height);
    for(int i =0; i<parts.length; i++){
-   if(i==1){
+   /*if(i==1){
     parts[i].rad=50;
-    }else{
+    }else{*/
       parts[i].rad=5;
     }
      parts[i].show();
